@@ -70,26 +70,26 @@ function remove_prefix(string $prefix, string $content): string {
 
 function remove_composer_deps(array $names) {
     $data = json_decode(file_get_contents(__DIR__.'/composer.json'), true);
-    
+
     foreach($data['require-dev'] as $name => $version) {
         if (in_array($name, $names, true)) {
             unset($data['require-dev'][$name]);
         }
     }
-    
+
     file_put_contents(__DIR__.'/composer.json', json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
 }
 
 function remove_composer_script($scriptName) {
     $data = json_decode(file_get_contents(__DIR__.'/composer.json'), true);
-    
+
     foreach($data['scripts'] as $name => $script) {
         if ($scriptName === $name) {
             unset($data['scripts'][$name]);
             break;
         }
     }
-    
+
     file_put_contents(__DIR__.'/composer.json', json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
 }
 
@@ -134,10 +134,6 @@ $packageSlugWithoutPrefix = remove_prefix('laravel-', $packageSlug);
 $className = title_case($packageName);
 $className = ask('Class name', $className);
 $description = ask('Package description', "This is my package {$packageSlug}");
-
-$usePhpStan = confirm('Enable PhpStan?', true);
-$usePhpCsFixer = confirm('Enable PhpCsFixer?', true);
-$useUpdateChangelogWorkflow = confirm('Use automatic changelog updater workflow?', true);
 
 writeln('------');
 writeln("Author     : {$authorName} ({$authorUsername}, {$authorEmail})");
@@ -185,30 +181,6 @@ foreach ($files as $file) {
         str_contains($file, 'config/skeleton.php') => rename($file, './config/' . $packageSlugWithoutPrefix . '.php'),
         default => [],
     };
-}
-
-if (! $usePhpCsFixer) {
-    safeUnlink(__DIR__ . '/.php_cs.dist.php');
-    safeUnlink(__DIR__ . '/.github/workflows/php-cs-fixer.yml');
-}
-
-if (! $usePhpStan) {
-    safeUnlink(__DIR__ . '/phpstan.neon.dist');
-    safeUnlink(__DIR__ . '/phpstan-baseline.neon');
-    safeUnlink(__DIR__ . '/.github/workflows/phpstan.yml');
-
-    remove_composer_deps([
-        'phpstan/extension-installer',
-        'phpstan/phpstan-deprecation-rules',
-        'phpstan/phpstan-phpunit',
-        'nunomaduro/larastan',
-    ]);
-    
-    remove_composer_script('phpstan');
-}
-
-if (! $useUpdateChangelogWorkflow) {
-    safeUnlink(__DIR__ . '/.github/workflows/update-changelog.yml');
 }
 
 confirm('Execute `composer install` and run tests?') && run('composer install && composer test');

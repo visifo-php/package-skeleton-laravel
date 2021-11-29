@@ -1,29 +1,39 @@
 # :package_description
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/:vendor_slug/:package_slug.svg?style=flat-square)](https://packagist.org/packages/:vendor_slug/:package_slug)
+[![Latest Stable Version](http://poser.pugx.org/:vendor_slug/:package_slug/v)](https://packagist.org/packages/:vendor_slug/:package_slug)
+[![Total Downloads](http://poser.pugx.org/:vendor_slug/:package_slug/downloads)](https://packagist.org/packages/:vendor_slug/:package_slug)
+[![License](http://poser.pugx.org/:vendor_slug/:package_slug/license)](https://packagist.org/packages/:vendor_slug/:package_slug)
+[![PHP Version Require](http://poser.pugx.org/:vendor_slug/:package_slug/require/php)](https://packagist.org/packages/:vendor_slug/:package_slug)
+
+[![codecov](https://codecov.io/gh/:vendor_slug/:package_slug/branch/main/graph/badge.svg?token=???)](https://codecov.io/gh/:vendor_slug/:package_slug)
 [![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/:vendor_slug/:package_slug/run-tests?label=tests)](https://github.com/:vendor_slug/:package_slug/actions?query=workflow%3Arun-tests+branch%3Amain)
 [![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/:vendor_slug/:package_slug/Check%20&%20fix%20styling?label=code%20style)](https://github.com/:vendor_slug/:package_slug/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/:vendor_slug/:package_slug.svg?style=flat-square)](https://packagist.org/packages/:vendor_slug/:package_slug)
+
+[![composer.lock](http://poser.pugx.org/:vendor_slug/:package_slug/composerlock)](https://packagist.org/packages/:vendor_slug/:package_slug)
+[![.gitattributes](http://poser.pugx.org/:vendor_slug/:package_slug/gitattributes)](https://packagist.org/packages/:vendor_slug/:package_slug)
 
 ---
+## Manual TODOs [codecov](https://codecov.io/)
+
+- [ ] Replace codecov token or the whole badge! Can be found under:
+https://codecov.io/gh/:vendor_slug/:package_slug/settings/badge
+or Settings -> Badge
+
+- [ ] Configure repository secrets.CODECOV_TOKEN. See: [Github docu - Adding secrets for a repository](https://docs.github.com/en/codespaces/managing-codespaces-for-your-organization/managing-encrypted-secrets-for-your-repository-and-organization-for-codespaces#adding-secrets-for-a-repository)
+
+---
+
 This repo can be used to scaffold a Laravel package. Follow these steps to get started:
 
 1. Press the "Use template" button at the top of this repo to create a new repo with the contents of this skeleton
 2. Run "php ./configure.php" to run a script that will replace all placeholders throughout all the files
 3. Remove this block of text.
 4. Have fun creating your package.
-5. If you need help creating a package, consider picking up our <a href="https://laravelpackage.training">Laravel Package Training</a> video course.
+5. If you need help creating a package, consider picking up Spaties <a href="https://laravelpackage.training">Laravel Package Training</a> video course.
 ---
 
 This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
 
-## Support us
-
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/:package_name.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/:package_name)
-
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
-
-We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
 
 ## Installation
 
