@@ -13,7 +13,12 @@
 [![.gitattributes](http://poser.pugx.org/:vendor_slug/:package_slug/gitattributes)](https://packagist.org/packages/:vendor_slug/:package_slug)
 
 ---
-## Manual TODOs [codecov](https://codecov.io/)
+## Manual TODOs 
+
+### discussions
+- [ ] Enable discussions for your repository: Settings -> Options -> Features / Discussions
+
+### [codecov](https://codecov.io/)
 
 - [ ] Replace codecov token or the whole badge! Can be found under:
 https://codecov.io/gh/:vendor_slug/:package_slug/settings/badge
