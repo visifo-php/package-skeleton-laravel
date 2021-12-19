@@ -52,7 +52,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "VendorName\\Skeleton\\Providers\\SkeletonServiceProvider"
             ],
             "aliases": {
                 "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"

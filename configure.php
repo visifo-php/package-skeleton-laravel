@@ -169,7 +169,7 @@ foreach ($files as $file) {
 
     match (true) {
         str_contains($file, 'src/Skeleton.php') => rename($file, './src/' . $className . '.php'),
-        str_contains($file, 'src/SkeletonServiceProvider.php') => rename($file, './src/' . $className . 'ServiceProvider.php'),
+        str_contains($file, 'src/Providers/SkeletonServiceProvider.php') => rename($file, './src/Providers/' . $className . 'ServiceProvider.php'),
         str_contains($file, 'src/Facades/Skeleton.php') => rename($file, './src/Facades/' . $className . '.php'),
         str_contains($file, 'src/Commands/SkeletonCommand.php') => rename($file, './src/Commands/' . $className . 'Command.php'),
         str_contains($file, 'database/migrations/create_skeleton_table.php.stub') => rename($file, './database/migrations/create_' . $packageSlugWithoutPrefix . '_table.php.stub'),
