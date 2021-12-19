@@ -22,8 +22,11 @@
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.3",
-        "phpunit/phpunit": "^9.5",
-        "vimeo/psalm": "^4.12"
+        "nunomaduro/larastan": "^1.0",
+        "phpstan/extension-installer": "^1.1",
+        "phpstan/phpstan-deprecation-rules": "^1.0",
+        "phpstan/phpstan-phpunit": "^1.0",
+        "phpunit/phpunit": "^9.5"
     },
     "autoload": {
         "psr-4": {
